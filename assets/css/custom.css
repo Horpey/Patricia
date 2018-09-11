@@ -513,7 +513,7 @@ output {
 }
 
 .logii {
-  color: #119239;
+  color: #ff6b00;
 }
 
 .btn-green:hover {
@@ -759,4 +759,19 @@ select.form-control:not([size]):not([multiple]) {
   padding: 47px 0px;
   color: white;
   border-bottom: 1px solid #343558;
+}
+.wizard-container{
+  width: 400px;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+
+.quantity::-webkit-inner-spin-button, 
+.quantity::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.quantity::placeholder {
+  color: #88899d;
 }
