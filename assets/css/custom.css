@@ -573,24 +573,49 @@ output {
   background-size: cover;
   background-position: center;
 }
+.think-x{
+  text-align: right;
+}
 
 @media only screen and (max-width: 640px) {
   /* Add your custom styles here for Mobile */
-  .head-q {
-    font-size: 1.8em !important;
-    margin-top: 101px;
+  .index-page .page-header .container>.content-center {
+    top: 64%;
   }
-  .better-way {
-    font-size: 25px !important;
+  .exh{
+    font-size: 2.3em;
   }
-  .country-sel {
-    width: 100% !important;
+  .safer{
+    font-size: 16px;
   }
-  .conti-q {
-    width: 100%;
+  .land-illust{
+    display: none;
+  }
+  .safe-img {
+    max-width: 100%!important;
+  }
+  .think {
+    padding-top: 0px!important;
+    padding-bottom: 66px!important;
+    background-position: 0% 15%!important;
+    background-size: 100%!important;
+  }
+  .think-x{
+    text-align: left;
+  }
+  .customer{
+    background-repeat: no-repeat!important;
+    background-image: url(../img/testimonial-bg-sm.png)!important;
+    background-size: 100%!important;
   }
 }
-
+.sidebar-collapse .navbar-collapse:before{
+  opacity: 1;
+  background: linear-gradient(#161839 0%, #000 80%);
+}
+.nav-open .sidebar-collapse .navbar-collapse{
+      border-left: 3px solid #ffffff3d;
+}
 .prev-text {
   font-size: 17px;
   max-width: 472px;
@@ -694,7 +719,6 @@ output {
   background-repeat: no-repeat;
   background-image: url(../img/testimonial-bg.png);
   background-size: 100%;
-  background-image: url('../img/testimonial-bg.png');
 }
 .patri-select{
   background: white;
