@@ -775,3 +775,15 @@ select.form-control:not([size]):not([multiple]) {
 .quantity::placeholder {
   color: #88899d;
 }
+.rotating {
+    -webkit-animation: rotation 2s infinite linear;
+}
+
+@-webkit-keyframes rotation {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(359deg);
+    }
+}
