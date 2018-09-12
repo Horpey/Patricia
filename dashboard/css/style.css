@@ -4330,6 +4330,12 @@ ul.common li a:hover {
 .table>thead>tr>th {
     border-top: 1px solid rgba(120, 130, 140, .13)
 }
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:active{
+    color: #b5b5b5 !important;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button{
+    background-color: #0000006e!important;
+}
 table.dataTable tbody td{
     color: white;
 }
@@ -4340,8 +4346,8 @@ table.dataTable tbody td{
 }
 .dataTables_wrapper .dataTables_paginate .paginate_button.current{
     color: #fff !important;
-    border: 1px solid #ff6b00!important;
-    background-color: #ff6b00!important;
+    border: 1px solid #787d8d!important;
+    background-color: #787d8d!important;
 }
 table.dataTable tbody tr{
     background-color: transparent!important;
@@ -19786,6 +19792,8 @@ ul.pro-amenities li span i {
         margin-top: 60px
     }
 }
+
+
 
 .navbar-top-links .dropdown-alerts,
 .navbar-top-links .dropdown-messages,

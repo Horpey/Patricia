@@ -200,3 +200,11 @@ body {
 .sidebar-nav{
   background-color: #252d47;
 }
+
+.pending{
+    color: #ff6b00!important;
+}
+
+.completed{
+  color: #13d0a7!important;
+}
