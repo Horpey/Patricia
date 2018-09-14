@@ -43,6 +43,7 @@
 </head>
 
 <body class="fix-sidebar">
+    <div id="app">
     <!-- Preloader -->
     <!-- <div class="preloader">
         <svg class="circular" viewBox="25 25 50 50">
@@ -239,32 +240,37 @@
                                 <div class="panel wallet-widgets white-box p-0">
                                     <ul class="wallet-list">
                                         <li>
-                                            <i class="icon-wallet"></i>
-                                            <a href="javascript:void(0)">Bitcoin</a>
+                                            <div class="radio radio-hide radio-circle radio-info">
+                                                <input v-on:click="showMobileMenu = !showMobileMenu" value="BTC" v-model="convertFrom" class="radiocheck" id="bitcoin" name="convertFrom" type="radio">
+                                                <label class="label-for" for="bitcoin" name="convertFrom">Bitcoin</label>
+                                                <!-- <span v-bind:class="{ hide: showMobileMenu }">
+                                                    <span class="fa fa-check text-color pull-right check-icon"></span>
+                                                </span> -->
+                                            </div>
                                         </li>
                                         <li>
-                                            <i class="icon-handbag"></i>
-                                            <a href="javascript:void(0)">Perfect Money</a>
+                                            <div class="radio radio-hide radio-circle radio-info">
+                                                <input value="PM" v-model="convertFrom" class="radiocheck" id="perfect" name="convertFrom" type="radio">
+                                                <label class="label-for" for="perfect" name="convertFrom">Perfect Money</label>
+                                            </div>
                                         </li>
                                         <li>
-                                            <i class="ti-archive"></i>
-                                            <a href="javascript:void(0)">US Dollars</a>
+                                            <div class="radio radio-hide radio-circle radio-info">
+                                                <input value="US" v-model="convertFrom" class="radiocheck" id="us" name="convertFrom" type="radio">
+                                                <label class="label-for" for="us" name="convertFrom">US Dollars</label>
+                                            </div>
                                         </li>
                                         <li>
-                                            <i class=" ti-wallet"></i>
-                                            <a href="javascript:void(0)">Naira</a>
+                                            <div class="radio radio-hide radio-circle radio-info">
+                                                <input value="NGN" v-model="convertFrom" class="radiocheck" id="naira" name="convertFrom" type="radio">
+                                                <label class="label-for" for="naira" name="convertFrom">Naira</label>
+                                            </div>
                                         </li>
                                         <li>
-                                            <i class=" ti-wallet"></i>
-                                            <a href="javascript:void(0)">Ghana Cedis</a>
-                                        </li>
-                                        <li>
-                                            <i class=" ti-wallet"></i>
-                                            <a href="javascript:void(0)">Ghana Cedis</a>
-                                        </li>
-<li>
-                                            <i class=" ti-wallet"></i>
-                                            <a href="javascript:void(0)">Ghana Cedis</a>
+                                            <div class="radio radio-hide radio-circle radio-info">
+                                                <input value="Cedis" v-model="convertFrom" class="radiocheck" id="cedis" name="convertFrom" type="radio">
+                                                <label class="label-for" for="cedis" name="convertFrom">Ghana Cedis</label>
+                                            </div>
                                         </li>
                                     </ul>
                                 </div>
@@ -275,7 +281,7 @@
                                         <!-- <h3>Select Currency to Exchange</h3> -->
                                         <form class="form-horizontal">
                                             <div class="form-group">
-                                                <label class="col-md-12">BTC/USD: <span class="text-color">1.0</span> <span class="help pull-right"> Rate: <span class="text-color">2%</span></span></label>
+                                                <label class="col-md-12">{{convertFrom}} / {{convertTo}}: <span class="text-color">1.0</span> <span class="help pull-right"> Rate: <span class="text-color">2%</span></span></label>
                                                 <div class="col-md-12">
                                                     <input type="text" class="form-control" value="12.00"> </div>
                                             </div>
@@ -308,32 +314,37 @@
                                 <div class="panel wallet-widgets white-box p-0">
                                     <ul class="wallet-list">
                                         <li>
-                                            <i class="icon-wallet"></i>
-                                            <a href="javascript:void(0)">Bitcoin</a>
+                                            <div class="radio radio-hide radio-circle radio-info">
+                                                <input v-on:click="showMobileMenu = !showMobileMenu" value="BTC" v-model="convertTo" class="radiocheck" id="bitcoin2" name="convertTo" type="radio">
+                                                <label class="label-for" for="bitcoin2" name="convertTo">Bitcoin</label>
+                                                <!-- <span v-bind:class="{ hide: showMobileMenu }">
+                                                    <span class="fa fa-check text-color pull-right check-icon"></span>
+                                                </span> -->
+                                            </div>
                                         </li>
                                         <li>
-                                            <i class="icon-handbag"></i>
-                                            <a href="javascript:void(0)">Perfect Money</a>
+                                            <div class="radio radio-hide radio-circle radio-info">
+                                                <input value="PM" v-model="convertTo" class="radiocheck" id="perfect2" name="convertTo" type="radio">
+                                                <label class="label-for" for="perfect2" name="convertTo">Perfect Money</label>
+                                            </div>
                                         </li>
                                         <li>
-                                            <i class="ti-archive"></i>
-                                            <a href="javascript:void(0)">US Dollars</a>
+                                            <div class="radio radio-hide radio-circle radio-info">
+                                                <input value="US" v-model="convertTo" class="radiocheck" id="us2" name="convertTo" type="radio">
+                                                <label class="label-for" for="us2" name="convertTo">US Dollars</label>
+                                            </div>
                                         </li>
                                         <li>
-                                            <i class=" ti-wallet"></i>
-                                            <a href="javascript:void(0)">Naira</a>
+                                            <div class="radio radio-hide radio-circle radio-info">
+                                                <input value="NGN" v-model="convertTo" class="radiocheck" id="naira2" name="convertTo" type="radio">
+                                                <label class="label-for" for="naira2" name="convertTo">Naira</label>
+                                            </div>
                                         </li>
                                         <li>
-                                            <i class=" ti-wallet"></i>
-                                            <a href="javascript:void(0)">Ghana Cedis</a>
-                                        </li>
-                                        <li>
-                                            <i class=" ti-wallet"></i>
-                                            <a href="javascript:void(0)">Ghana Cedis</a>
-                                        </li>
-<li>
-                                            <i class=" ti-wallet"></i>
-                                            <a href="javascript:void(0)">Ghana Cedis</a>
+                                            <div class="radio radio-hide radio-circle radio-info">
+                                                <input value="Cedis" v-model="convertTo" class="radiocheck" id="cedis2" name="convertTo" type="radio">
+                                                <label class="label-for" for="cedis2" name="convertTo">Ghana Cedis</label>
+                                            </div>
                                         </li>
                                     </ul>
                                 </div>
@@ -398,6 +409,9 @@
 
     </div>
     <!-- /#wrapper -->
+</div>
+
+    </body>
     <!-- jQuery -->
     <script src="plugins/bower_components/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap Core JavaScript -->
@@ -408,6 +422,9 @@
     <script src="js/jquery.slimscroll.js"></script>
     <!--Wave Effects -->
     <script src="js/waves.js"></script>
+
+    <script src="js/vue.min.js"></script>
+
 
 
 
@@ -425,6 +442,8 @@
     <!-- end - This is for export functionality only -->
     <script>
         $(document).ready(function () {
+            
+
             $('#myTable').DataTable();
             $(document).ready(function () {
                 var table = $('#example').DataTable({
@@ -473,6 +492,29 @@
         });
     </script>
 
-</body>
+    <script type="text/javascript">
+
+    var data = {
+        test: "Hello World",
+        convertFrom: null,
+        convertTo: null,
+        showMobileMenu: true
+
+    }
+    new Vue({
+        el: '#app',
+        data: data,
+        methods: {
+            toggleD: function(){
+                this.isActive = !this.isActive;
+              // some code to filter users
+            }
+        },
+        mounted() {
+        },
+    })
+</script>
+
+
 
 </html>

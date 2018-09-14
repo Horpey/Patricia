@@ -20065,7 +20065,22 @@ ul.pro-amenities li span i {
         width: 300px
     }
 }
+.radio-info input[type=radio]:checked+label::after, .radio-info input[type=radio]:checked+label::before {
+    background-color: #ff6b00;
+}
+.radio-hide label::before{
+    visibility: hidden;
+}
+.radiocheck:checked ~ label {
+  color: #ff6b00;
+}
 
+.label-for{
+    color: #b3b3b3;
+}
+.d-inline{
+    display: inline-block;
+}
 /*Animation*/
 @keyframes lds-spinner {
   0% {
