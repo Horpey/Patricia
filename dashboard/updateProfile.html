@@ -38,12 +38,13 @@
       <![endif]-->
 
     <!-- Related File -->
+    <link href="plugins/bower_components/switchery/dist/switchery.min.css" rel="stylesheet" />
+
     <link href="plugins/bower_components/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
     <link href="https://cdn.datatables.net/buttons/1.2.2/css/buttons.dataTables.min.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body class="fix-sidebar">
-    <div id="app">
     <!-- Preloader -->
     <!-- <div class="preloader">
         <svg class="circular" viewBox="25 25 50 50">
@@ -185,7 +186,7 @@
                 </div>
                 <ul class="nav" id="side-menu">
                     <li>
-                        <a href="javascript:void(0)" class="waves-effect active">
+                        <a href="index.html" class="waves-effect">
                             <i data-icon="v" class="mdi mdi-av-timer fa-fw"></i>
                             <span class="hide-menu">Exchange </span>
                         </a>
@@ -214,7 +215,7 @@
             <div class="container-fluid">
                 <div class="row bg-title">
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                        <h4 class="page-title">Start Exchange</h4>
+                        <h4 class="page-title">Profile</h4>
                     </div>
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                         <!-- <button class="right-side-toggle waves-effect waves-light btn-info btn-circle pull-right m-l-20">
@@ -224,7 +225,7 @@
                             <li class="">
                                 <a href="index.html">Dashboard</a>
                             </li>
-                            <li class="active">Exchange</li>
+                            <li class="active">Profile</li>
                         </ol>
                     </div>
                     <!-- /.col-lg-12 -->
@@ -234,170 +235,74 @@
                 <!-- Add Main Content -->
                 <!-- /row -->
                 <div class="row">
-                    <div class="col-sm-12">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="panel wallet-widgets white-box p-0">
-                                    <ul class="wallet-list">
-                                        <li>
-                                            <div class="radio radio-hide radio-circle radio-info">
-                                                <input v-on:click="showMobileMenu = !showMobileMenu" value="BTC" v-model="convertFrom" class="radiocheck" id="bitcoin" name="convertFrom" type="radio">
-                                                <label class="label-for" for="bitcoin" name="convertFrom">Bitcoin</label>
-                                                <!-- <span v-bind:class="{ hide: showMobileMenu }">
-                                                    <span class="fa fa-check text-color pull-right check-icon"></span>
-                                                </span> -->
+                    <div class="col-sm-8">
+                        <div class="panel wallet-widgets p-0">
+                            <div class="panel-body" style="min-height: 120px;">
+                                <div class="row">
+                                    <div class="col-md-2 col-sm-3 col-xs-3">
+                                        <div class="user-profile">
+                                            <div class="user-pro-body">
+                                                <div>
+                                                    <img src="plugins/images/users/horpey.jpg" alt="user-img" class="img-circle">
+                                                </div>
                                             </div>
-                                        </li>
-                                        <li>
-                                            <div class="radio radio-hide radio-circle radio-info">
-                                                <input value="PM" v-model="convertFrom" class="radiocheck" id="perfect" name="convertFrom" type="radio">
-                                                <label class="label-for" for="perfect" name="convertFrom">Perfect Money</label>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="radio radio-hide radio-circle radio-info">
-                                                <input value="US" v-model="convertFrom" class="radiocheck" id="us" name="convertFrom" type="radio">
-                                                <label class="label-for" for="us" name="convertFrom">US Dollars</label>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="radio radio-hide radio-circle radio-info">
-                                                <input value="NGN" v-model="convertFrom" class="radiocheck" id="naira" name="convertFrom" type="radio">
-                                                <label class="label-for" for="naira" name="convertFrom">Naira</label>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="radio radio-hide radio-circle radio-info">
-                                                <input value="Cedis" v-model="convertFrom" class="radiocheck" id="cedis" name="convertFrom" type="radio">
-                                                <label class="label-for" for="cedis" name="convertFrom">Ghana Cedis</label>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="panel wallet-widgets p-0" style="margin-bottom: 8px!important;">
-                                    <div class="panel-body" style="min-height: 334px;">
-                                        <!-- <h3>Select Currency to Exchange</h3> -->
-                                        <form class="form-horizontal form-x">
-                                            <div class="form-group">
-                                                <label class="col-md-12">{{convertFrom}} / {{convertTo}}: <span class="text-color">1.0</span> <span class="help pull-right"> Rate: <span class="text-color">2%</span></span></label>
-                                                <div class="col-md-12">
-                                                    <input type="text" class="form-control" value="12.00"> </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="col-md-12">
-                                                    <input type="text" class="form-control" value="3000"> </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="col-md-12">
-                                                    <input type="text" class="form-control" placeholder="USD Account Number"> </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="col-md-12">
-                                                    <input type="text" class="form-control" placeholder="Email Address"> </div>
-                                            </div>
-                                            <button class="btn btn-block btn-orange btn-exchange">Exchange</button>
-                                        </form>
-
-                                        <!-- Scan to Pay -->
-                                        <div class="scan-code text-center">
-                                            <p class="text-bold">Scan to pay into this Wallet</p>
-                                            <img src="plugins/images/qr-code.png" class="img-fluid img-responsive">
-                                            <p class="text-bold">or pay into this wallet address</p>
-                                            <p class="qr-address">FHNDSKFD232MNDSDK2E2KS1021</p>
                                         </div>
-        
-                                        <!-- Scan to Pay -->
                                     </div>
-                                </div>
-                                <div class="panel wallet-widgets p-0">
-                                    <div class="panel-body" style="min-height: 120px;">
-                                        <!-- <h3>Select Currency to Exchange</h3> -->
-                                        <div class="lds-css ng-scope">
-                                            <div class="lds-spinner" style="100%;height:100%"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+                                    <div class="col-md-5 col-sm-5 col-xs-4">
+                                        <div class="profile-action">
+                                            <a href="profile.html" class="btn btn-white btn-exchange">
+                                                <span class="fa fa-eye"></span>
+                                            </a>
+                                            <a href="#" class="btn btn-white btn-exchange">
+                                                <span class="fa fa-trash"></span>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="panel wallet-widgets white-box p-0">
-                                    <ul class="wallet-list">
-                                        <li>
-                                            <div class="radio radio-hide radio-circle radio-info">
-                                                <input v-on:click="showMobileMenu = !showMobileMenu" value="BTC" v-model="convertTo" class="radiocheck" id="bitcoin2" name="convertTo" type="radio">
-                                                <label class="label-for" for="bitcoin2" name="convertTo">Bitcoin</label>
-                                                <!-- <span v-bind:class="{ hide: showMobileMenu }">
-                                                    <span class="fa fa-check text-color pull-right check-icon"></span>
-                                                </span> -->
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="radio radio-hide radio-circle radio-info">
-                                                <input value="PM" v-model="convertTo" class="radiocheck" id="perfect2" name="convertTo" type="radio">
-                                                <label class="label-for" for="perfect2" name="convertTo">Perfect Money</label>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="radio radio-hide radio-circle radio-info">
-                                                <input value="US" v-model="convertTo" class="radiocheck" id="us2" name="convertTo" type="radio">
-                                                <label class="label-for" for="us2" name="convertTo">US Dollars</label>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="radio radio-hide radio-circle radio-info">
-                                                <input value="NGN" v-model="convertTo" class="radiocheck" id="naira2" name="convertTo" type="radio">
-                                                <label class="label-for" for="naira2" name="convertTo">Naira</label>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="radio radio-hide radio-circle radio-info">
-                                                <input value="Cedis" v-model="convertTo" class="radiocheck" id="cedis2" name="convertTo" type="radio">
-                                                <label class="label-for" for="cedis2" name="convertTo">Ghana Cedis</label>
-                                            </div>
-                                        </li>
-                                    </ul>
+                                <form class="form-horizontal form-material">
+                                <div class="row">
+                                    <div class="col-md-6 col-xs-6 m-b-20 b-r"> <strong>Full Name</strong>
+                                        <br>
+                                       <input type="text" placeholder="Full Name" value="Adeniran Opeyemi" class="form-control form-control-line">
+                                    </div>
+                                    <div class="col-md-6 col-xs-6 m-b-20 b-r"> <strong>Username</strong>
+                                        <br>
+                                        <input type="text" placeholder="User Name" value="tha_ui_guy" class="form-control form-control-line">
+                                    </div>
+                                    <div class="col-md-6 col-xs-6 m-b-20 b-r"> <strong>Email ID</strong>
+                                        <br>
+                                        <input type="email" placeholder="Email ID" value="adeniran.opeyemi.ao@gmail.com" class="form-control form-control-line">
+                                    </div>
+                                    <div class="col-md-6 col-xs-6 m-b-20 b-r"> <strong>Location</strong>
+                                        <br>
+                                        <select class="form-control form-control-line profile-sel">
+                                            <option selected="selected">Nigeria</option>
+                                            <option>India</option>
+                                            <option>Usa</option>
+                                            <option>Canada</option>
+                                            <option>Thailand</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 col-xs-6 m-b-20 b-r"> <strong>State</strong>
+                                        <br>
+                                        <select class="form-control form-control-line profile-sel">
+                                            <option selected="selected">Lagos</option>
+                                            <option>Abuja</option>
+                                            <option>Oyo</option>
+                                            <option>Kaduna</option>
+                                            <option>Ekiti</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 col-xs-6 m-b-20 b-r"> <strong>Notification</strong>
+                                        <br>
+                                        <p class="text-muted d-inline">Send Notification</p>
+                                        <div class="m-b-30 m-l-30 d-inline">
+                                            <input type="checkbox" checked class="js-switch" data-color="#ff6b00" data-size="small" />
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="white-box">
-                            <h3 class="box-title m-b-0">History</h3>
-                            <!-- <p class="text-muted m-b-30">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p> -->
-                            <div class="table-responsive">
-                                <table id="myTable" class="table table-striped">
-                                    <thead>
-                                        <tr>
-                                            <th>Amount</th>
-                                            <th>From</th>
-                                            <th>To</th>
-                                            <th>Equivalence</th>
-                                            <th>Status</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>0.32</td>
-                                            <td>BTC</td>
-                                            <td>USD</td>
-                                            <td>$1200</td>
-                                            <td class="pending">Pending</td>
-                                        </tr>
-                                        <tr>
-                                            <td>0.32</td>
-                                            <td>BTC</td>
-                                            <td>USD</td>
-                                            <td>$1200</td>
-                                            <td class="pending">Pending</td>
-                                        </tr>
-                                        <tr>
-                                            <td>0.32</td>
-                                            <td>BTC</td>
-                                            <td>USD</td>
-                                            <td>$1200</td>
-                                            <td class="completed">Completed</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                                </form>
+                                <a href="updateProfile.html" class="btn btn-orange btn-exchange">Update Account Settings</a>
                             </div>
                         </div>
                     </div>
@@ -419,9 +324,6 @@
 
     </div>
     <!-- /#wrapper -->
-</div>
-
-    </body>
     <!-- jQuery -->
     <script src="plugins/bower_components/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap Core JavaScript -->
@@ -433,14 +335,13 @@
     <!--Wave Effects -->
     <script src="js/waves.js"></script>
 
-    <script src="js/vue.min.js"></script>
-
-
 
 
     <!-- Custom Theme JavaScript -->
     <script src="js/custom.min.js"></script>
     <script src="plugins/bower_components/datatables/jquery.dataTables.min.js"></script>
+    <script src="plugins/bower_components/switchery/dist/switchery.min.js"></script>
+
     <!-- start - This is for export functionality only -->
     <script src="https://cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.flash.min.js"></script>
@@ -452,15 +353,11 @@
     <!-- end - This is for export functionality only -->
     <script>
         $(document).ready(function () {
-
-            $( ".btn-exchange" ).click(function( event ) {
-                event.preventDefault();
-                $('.form-x').slideUp();
-                $('.scan-code').slideDown();
-
-
+            // Switchery
+            var elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
+            $('.js-switch').each(function() {
+                new Switchery($(this)[0], $(this).data());
             });
-            
 
             $('#myTable').DataTable();
             $(document).ready(function () {
@@ -510,29 +407,6 @@
         });
     </script>
 
-    <script type="text/javascript">
-
-    var data = {
-        test: "Hello World",
-        convertFrom: null,
-        convertTo: null,
-        showMobileMenu: true
-
-    }
-    new Vue({
-        el: '#app',
-        data: data,
-        methods: {
-            toggleD: function(){
-                this.isActive = !this.isActive;
-              // some code to filter users
-            }
-        },
-        mounted() {
-        },
-    })
-</script>
-
-
+</body>
 
 </html>

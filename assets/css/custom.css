@@ -6,6 +6,10 @@
     src: url('../fonts/product-sans-font/Product Sans Regular.ttf');
 }*/
 
+.modal-open{
+      padding-right: 0px!important;
+      overflow: hidden;
+}
 
 .page-header {
   background: linear-gradient(0deg, rgba(44, 44, 44, 0.2), rgba(0, 0, 0, 0.12));
@@ -697,6 +701,18 @@ output {
   width: 126px;
   margin-bottom: 13px;
 }
+.message-in{
+  border: 1px solid #dadada!important;
+  background: white!important;
+  border-radius: 0.25rem!important;
+  height: calc(7.25rem + 11px)!important;
+}
+.contact-input{
+  border: 1px solid #dadada;
+  background: white;
+  border-radius: 0.25rem;
+  height: calc(2.25rem + 11px);
+}
 .patri{
   text-align: center;
   border-top: 1px solid;
@@ -764,6 +780,15 @@ select.form-control:not([size]):not([multiple]) {
   width: 400px;
   margin: 0 auto;
   margin-top: 40px;
+}
+.wizard-container-faq{
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 100px;
+  margin-top: 40px;
+}
+a.text-black:hover, a.text-black:focus{
+  color: #171940;
 }
 
 .quantity::-webkit-inner-spin-button, 

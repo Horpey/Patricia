@@ -52,8 +52,13 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" style="font-size: 14px;">
+                        <a href="#" class="nav-link" data-toggle="modal" data-target="#contactForm" style="font-size: 14px;">
                            Help
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="faq.html" class="nav-link" style="font-size: 14px;">
+                           FAQ
                         </a>
                     </li>
                     <li class="nav-item">
@@ -176,6 +181,40 @@
                     <p class="text-greyy patri">Copyright © 2018 PatriciaExchange</p>
                 </div>
             </div>
+
+            <!-- Contact Modal -->
+                    <!-- Modal Core -->
+                    <div class="modal fade" id="contactForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title" id="myModalLabel">Contact Us</h4>
+                          </div>
+                          <div class="modal-body">
+                            <form>
+                                <div class="form-group">
+                                    <input type="text" class= "form-control-md form-control contact-input partss" placeholder="Name" ">
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class= "form-control-md form-control contact-input partss" placeholder="Email Address" ">
+                                </div>
+                                <div class="form-group"><!-- 
+                                    <input type="email" class= "form-control-md form-control contact-input partss" placeholder="Email Address" "> -->
+                                    <textarea class="form-control message-in" placeholder="Message" name="" rows="10"></textarea>
+                                </div>
+                                <button class="nav-link btn btn-lg btn-orange text-center btn-block">Send a Message</button>
+                            </form>
+                          </div>
+                          <!-- <div class="modal-footer">
+                            <button type="button" class="btn btn-default btn-simple" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-info btn-simple">Save</button>
+                          </div> -->
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Contact Modal -->
 
 </body>
 <!--   Core JS Files   -->

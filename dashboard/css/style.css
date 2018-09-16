@@ -6104,9 +6104,9 @@ ul.list-icons li i {
 }
 
 .user-profile .user-pro-body img {
-    width: 50px;
+    width: 80px;
     display: block;
-    margin: 0 auto 10px
+    margin: 0 0 10px;
 }
 
 .user-profile .user-pro-body .u-dropdown {
