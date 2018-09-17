@@ -812,3 +812,17 @@ a.text-black:hover, a.text-black:focus{
         -webkit-transform: rotate(359deg);
     }
 }
+/*.footer-ul{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-left: 0px;
+}
+.footer-ul li{
+      padding: 0px 13px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    width: 48%;
+}*/
