@@ -208,3 +208,15 @@ body {
 .completed{
   color: #13d0a7!important;
 }
+
+.failed{
+  color: red!important;
+}
+
+.mt-0{
+  margin-top: 0px!important;
+}
+
+.text-yellow{
+  color: #F2C94C;
+}

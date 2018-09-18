@@ -33,3 +33,18 @@
 .profile-sel{
 	border: 0px;
 }
+/*.card-bg-orange{
+    background-repeat: no-repeat;
+    background-image: url(../plugins/images/card-bg.png);
+    background-position: right, top;
+}*/
+
+.p-relative{
+    position: relative;
+}
+.img-col{
+    position: absolute;
+    z-index: 0;
+    right: 0;
+    top: 0;
+}
