@@ -1,0 +1,7 @@
+.body{
+	background-color: red;
+	background-image: url('patricia-music.jpg');
+	background-size: cover;
+	background-position: center;
+	height: 100vh;
+}
